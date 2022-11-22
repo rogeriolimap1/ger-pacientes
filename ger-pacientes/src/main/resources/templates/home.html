@@ -1,0 +1,57 @@
+<h1>Pacientes</h1>
+	<table class="table table-light">
+		<tr class="table-dark">
+			<th></th>
+			<!-- Modificar -->
+			<th scope="col">nome</th>
+			<th scope="col">dataNascimento</th>
+			<th scope="col">nomeMãe</th>
+			<th scope="col">nomePai</th>
+			<th scope="col">CPF</th>
+			<th scope="col">RG</th>
+			<th scope="col">FoneCelular</th>
+			<th scope="col">FoneFixo</th>
+			<th scope="col">Email</th>
+			<th scope="col">rua</th>
+			<th scope="col">numero</th>
+			<th scope="col">Bairro</th>
+			<th scope="col">Cidade</th>
+			<th scope="col">Estado</th>
+			<th scope="col">TipoContratoSessão</th>
+			<th scope="col">NumeroSessõesMês</th>
+			<th scope="col">dataDeModificacao</th>
+			<th scope="col">valorSessao</th>
+			<th scope="col">valorTotal</th>
+			<th scope="col"></th>
+		</tr>
+		<!-- Modificar -->
+		<tr th:each="pac : ${pacientes}">
+			<th scope="row"></th>
+			<td><span th:text="${pac.nome}"></span></td>
+			<td><span th:text="${pac.dataNascimento}"></span></td>
+			<td><span th:text="${pac.NomeMae}"></span></td>
+			<td><span th:text="${pac.NomePai}"></span></td>
+			<td><span th:text="${pac.cpf}"></span></td>
+			<td><span th:text="${pac.rg}"></span></td>
+			<td><span th:text="${pac.foneCelular}"></span></td>
+			<td><span th:text="${pac.foneFixo}"></span></td>
+			<td><span th:text="${pac.email}"></span></td>
+			<td><span th:text="${pac.rua}"></span></td>
+			<td><span th:text="${pac.numero}"></span></td>
+			<td><span th:text="${pac.bairro}"></span></td>
+			<td><span th:text="${pac.cidade}"></span></td>
+			<td><span th:text="${pac.estado}"></span></td>
+			<td><span th:text="${pac.tipo/contratoSessão}"></span></td>
+			<td><span th:text="${pac.NumeroSessoesMes}"></span></td>
+			<td><span th:text="${pac.dataDeModificacao}"></span></td>
+			<td><span th:text="${pac.valorSessao}"></span></td>
+			<td><span th:text="${pac.valorTotal}"></span></td>
+			<td>R$<span th:text="${vet.salario}"></span></td>
+			<td class="buttons "><a th:href="@{form/{id}(id=${pac.id})}"
+				th:method="get" class="btn btn-warning"><i class="fa
+fa-pencil"></i></a>
+				<a th:href="@{delete/{id}(id=${pac.id})}" th:method="delete"
+					class="btn btn-danger"><i class="fafa-trash"> </i> </a> 
+</td>
+		</tr>
+	</table>
