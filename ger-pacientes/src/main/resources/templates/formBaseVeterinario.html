@@ -1,0 +1,29 @@
+<!-- Esse fragmento conterá o formulário com todos os campos comuns a um veterinário, precisará modificar para o seu projeto-->
+<div th:fragment="form">
+
+    <!-- Essa div conterá o nome do veterinário. O th:field é o campo do thymeleaf que faz o mapeamento para o atributo da classe-->
+    <!-- PlaceHolder é o valor padrão-->
+	<div class="form-group">
+		<label for="nome" class="form-label">Nome</label> 
+		<input	class="form-control" type="text" th:field="*{nome}" id="nome" placeholder="Nome Completo">
+	</div>
+
+    <!-- Essa div conterá o email.-->
+    <!-- PlaceHolder é o valor padrão-->
+    <!-- type email permite definir um campo de entrada formatado para email-->
+	<div class="form-group">
+		<label for="email" class="form-label">Email</label> 
+		<input class="form-control" type="email" th:field="*{email}" id="email" required>
+	</div>
+
+	<div class="form-group">
+		<label for="especialidade" class="form-label">Especialidade</label>
+		<input class="form-control" type="text"	th:field="*{especialidade}" id="especialidade" required>
+	</div>
+	
+	<div class="form-group">
+		<label for="salario" class="form-label">Salário</label> 
+		<input class="form-control" type="number" th:field="*{salario}"	id="inputSalario" placeholder="R$1000.00" required>
+	</div>
+
+</div>
