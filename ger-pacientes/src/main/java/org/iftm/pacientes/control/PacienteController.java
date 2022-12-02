@@ -25,6 +25,13 @@ public class PacienteController {
 	return "addPacienteForm";
 	}
 	
+	@PostMapping("/add")
+    public String novo(Paciente paciente) {
+        pacRepository.save(paciente);
+        return "redirect:/home";
+    }
+
+	
 	  @GetMapping("form/{id}")
 	    public String updateForm(Model model, @PathVariable int id) {
 	    	Optional<Paciente> paciente = pacRepository.findById(id);
@@ -40,9 +47,6 @@ public class PacienteController {
 	    public String alterarProduto(Paciente paciente, @PathVariable int id) {
 	        pacRepository.save(paciente);
 	        return "redirect:/home";
-	    }
-
-
-	  
+	    }  
 	  
 }
